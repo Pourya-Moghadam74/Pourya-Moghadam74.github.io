@@ -59,7 +59,7 @@ const Header = () => {
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
       transform="translateY(0)"   // initial visible state
-      bg="#18181b"
+      bg="#001D3D"
       color="white"                        // ✅ keep header on top
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
@@ -73,7 +73,7 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}       
-                  _hover={{ color: "teal.300", transform: "scale(1.1)" }}
+                  _hover={{ color: "#FFC300", transform: "scale(1.1)" }}
                   transition="all 0.2s"
                 >
                   <FontAwesomeIcon size="2x" icon={s.icon} boxsize={6} _hover={{ color: "teal.300" }} />
@@ -83,9 +83,9 @@ const Header = () => {
           </nav>
 
           <nav>
-            <HStack spacing={8}>
-              <Link onClick={handleClick("projects")}>Projects</Link>
-              <Link onClick={handleClick("contactme")}>Contact me</Link>
+            <HStack gap={25} fontWeight="bold">
+              <Link onClick={handleClick("projects")} color="#FFC300">Projects</Link>
+              <Link onClick={handleClick("contactme")} color="#FFC300">Contact me</Link>
             </HStack>
           </nav>
         </HStack>

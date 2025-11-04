@@ -12,9 +12,7 @@ import {
   VStack,
   Portal,
   createListCollection,
-  Alert,
-  Spinner,
-  Text
+  SimpleGrid
 } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
@@ -55,18 +53,25 @@ const LandingSection = () => {
 
   return (
     <FullScreenSection
-      isDarkBackground
+      isDarkBackground={false}
       backgroundColor="#512DA8"
       py={16}
       spacing={8}
+      w="100%"
     >
-      <VStack w="1024px" p={32} alignItems="flex-start">
-        <Heading as="h1" id="contactme-section">
+    <VStack
+      w={["100%", "90%", "80%", "90%", "1024px"]} // responsive width
+      p={[4, 6, 8, 16]}                          // smaller padding on mobile
+      alignItems="stretch"                       // stretch fields for full width
+      spacing={8}
+
+    >
+        <Heading as="h1" id="contactme-section" color="#001D3D" size="2xl">
           Contact me
         </Heading>
         <Box p={6} rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit}>
-            <VStack spacing={4}>
+            <VStack spacing={4} color="#001D3D">
               <Field.Root invalid={formik.touched.firstName && formik.errors.firstName}>
                 <Field.Label htmlFor="firstName">Name</Field.Label>
                 <Input {...formik.getFieldProps('firstName')}
@@ -129,7 +134,8 @@ const LandingSection = () => {
                 />
                 <Field.ErrorText>{formik.errors.comment}</Field.ErrorText>
               </Field.Root>
-              <Button type="submit" colorPalette="purple" width="full" disabled={isLoading}>
+              <Button type="submit" bg="#FFC300" width="full" disabled={isLoading}
+              color="#001D3D">
                 {isLoading ? "Submitting..." : "Submit"}
               </Button>
             </VStack>

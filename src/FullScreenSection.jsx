@@ -7,10 +7,10 @@ import { VStack } from "@chakra-ui/react";
 const FullScreenSection = ({ children, isDarkBackground, ...boxProps }) => {
   return (
     <VStack
-      backgroundColor={boxProps.backgroundColor}
+      backgroundColor="#EEEEEE"
       color={isDarkBackground ? "white" : "black"}
     >
-      <VStack maxWidth="1280px" minHeight="100vh" {...boxProps}>
+      <VStack maxWidth="1024px" minHeight="100vh" {...boxProps} bg="#EEEEEE">
         {children}
       </VStack>
     </VStack>

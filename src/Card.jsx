@@ -24,7 +24,7 @@ export default function Card({ title, description, imageSrc, href = "#" }) {
 
       {/* Body */}
       <Box p={5}>
-        <Heading size="md" mb={2} color="black">
+        <Heading size="md" mb={2} color="#001D3D">
           {title}
         </Heading>
         <Text color="blackAlpha.700">
@@ -36,7 +36,7 @@ export default function Card({ title, description, imageSrc, href = "#" }) {
       <Box px={5} pb={5}>
         <Link
           href={href}
-          color="black"
+          color="#003566"
           display="inline-flex"
           alignItems="center"
           gap={2}
