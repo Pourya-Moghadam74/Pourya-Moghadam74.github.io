@@ -20,7 +20,7 @@ const LandingSection = () => (
         boxSize={["80px", "100px", "140px"]}
         shadow="md"
       >
-        <Avatar.Image src="./images/myPhoto.jpeg" />
+        <Avatar.Image src="/images/myPhoto.jpeg" />
       </Avatar.Root>
 
       <Heading size="md" marginBottom="2rem" color="#001D3D">{greeting}</Heading>
