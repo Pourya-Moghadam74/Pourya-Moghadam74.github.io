@@ -103,7 +103,7 @@ const Header = () => {
           {/* Mobile Hamburger */}
           <Drawer.Root isOpen={isOpen} onClose={onClose} colorPalette='red' placement={{ mdDown: "bottom", md: "end" }} size="xs">
             <Drawer.Trigger asChild>
-              <IconButton borderRadius="50px" size="xs" display={{ base: "flex", md: "none" }}>
+              <IconButton borderRadius="50px" size="xs" display={{ base: "flex", md: "none" }} onClick={onOpen}>
                 <LuMenu />
               </IconButton>
             </Drawer.Trigger>
