@@ -1,7 +1,9 @@
 import { Box, Heading, Text, Image, HStack, Link, Icon } from "@chakra-ui/react";
 import { HiArrowRight } from "react-icons/hi";
+import { useAlertContext } from "../context/alertContext";
 
 export default function Card({ title, description, imageSrc, href = "#" }) {
+  const { onOpen } = useAlertContext(); 
   return (
     <Box
       bg="white"
@@ -35,7 +37,7 @@ export default function Card({ title, description, imageSrc, href = "#" }) {
       {/* Footer / CTA */}
       <Box px={5} pb={5}>
         <Link
-          href={href}
+          onClick={() => onOpen('error', 'The page is not available at the moment.')}
           color="#003566"
           display="inline-flex"
           alignItems="center"

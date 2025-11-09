@@ -8,9 +8,7 @@ import { LuMenu } from "react-icons/lu"
 import {
   Button,
   CloseButton,
-  Kbd,
   Portal,
-  Text,
 } from "@chakra-ui/react"
 
 const socials = [
@@ -72,7 +70,7 @@ const Header = () => {
     >
       <Box maxW="1280px" mx="auto" px={{ base: 4, md: 16 }} py={4}>
         <HStack justifyContent="space-between" alignItems="center">
-          <HStack spacing={5}>
+          <HStack spacing={5} gap="2">
             {socials.map((s) => (
               <Link
                 key={s.label}
