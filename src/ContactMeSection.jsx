@@ -54,7 +54,7 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       isDarkBackground={false}
-      backgroundColor="#512DA8"
+      backgroundColor="#E7E7E7"
       py={16}
       spacing={8}
       w="100%"
@@ -134,7 +134,7 @@ const LandingSection = () => {
                 />
                 <Field.ErrorText>{formik.errors.comment}</Field.ErrorText>
               </Field.Root>
-              <Button type="submit" bg="#FFC300" width="full" disabled={isLoading}
+              <Button type="submit" bg="#a2a19dff" width="full" disabled={isLoading}
               color="#001D3D">
                 {isLoading ? "Submitting..." : "Submit"}
               </Button>

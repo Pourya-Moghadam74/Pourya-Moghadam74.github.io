@@ -1,15 +1,23 @@
 import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin, faMedium, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack, Link} from "@chakra-ui/react";
+import { faGithub, faLinkedin, faGoogleScholar } from "@fortawesome/free-brands-svg-icons";
+import { Box, HStack, Link, Drawer} from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react"
+import { LuMenu } from "react-icons/lu"
+import {
+  Button,
+  CloseButton,
+  Kbd,
+  Portal,
+  Text,
+} from "@chakra-ui/react"
 
 const socials = [
-  { label: "email", icon: faEnvelope, url: "mailto:hello@example.com" },
-  { label: "github", icon: faGithub, url: "https://github.com" },
-  { label: "linkedin", icon: faLinkedin, url: "https://www.linkedin.com" },
-  { label: "medium", icon: faMedium, url: "https://medium.com" },
-  { label: "stackoverflow", icon: faStackOverflow, url: "https://stackoverflow.com" },
+  { label: "email", icon: faEnvelope, url: "mailto:Pourya.Moghadam@utoronto.ca" },
+  { label: "github", icon: faGithub, url: "https://github.com/Pourya-Moghadam74" },
+  { label: "linkedin", icon: faLinkedin, url: "https://www.linkedin.com/in/pourya-moghadam/" },
+  { label: "googlescholar", icon: faGoogleScholar, url: "https://scholar.google.com/citations?user=f-NzJUcAAAAJ&hl=en" },
 ];
 
 const Header = () => {
@@ -62,32 +70,62 @@ const Header = () => {
       bg="#001D3D"
       color="white"                        // ✅ keep header on top
     >
-      <Box color="white" maxWidth="1280px" margin="0 auto">
-        <HStack px={16} py={4} justifyContent="space-between" alignItems="center">
-          <nav>
-            <HStack spacing={5}>
-              {socials.map((s) => (
-                <Link
-                  key={s.label}
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}       
-                  _hover={{ color: "#FFC300", transform: "scale(1.1)" }}
-                  transition="all 0.2s"
-                >
-                  <FontAwesomeIcon size="2x" icon={s.icon} boxsize={6} _hover={{ color: "teal.300" }} />
-                </Link>
-              ))}
-            </HStack>
-          </nav>
+      <Box maxW="1280px" mx="auto" px={{ base: 4, md: 16 }} py={4}>
+        <HStack justifyContent="space-between" alignItems="center">
+          <HStack spacing={5}>
+            {socials.map((s) => (
+              <Link
+                key={s.label}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                _hover={{ color: "#FFC300", transform: "scale(1.1)" }}
+                transition="all 0.2s"
+              >
+                <FontAwesomeIcon size="xl" icon={s.icon} />
+              </Link>
+            ))}
+          </HStack>
 
-          <nav>
-            <HStack gap={25} fontWeight="bold">
-              <Link onClick={handleClick("projects")} color="#FFC300">Projects</Link>
-              <Link onClick={handleClick("contactme")} color="#FFC300">Contact me</Link>
-            </HStack>
-          </nav>
+          {/* Desktop Nav */}
+          <HStack display={{ base: "none", md: "flex" }} spacing={10} fontWeight="bold">
+            <Link onClick={handleClick("projects")} color="#FFC300">Projects</Link>
+            <Link onClick={handleClick("contactme")} color="#FFC300">Contact Me</Link>
+          </HStack>
+
+          {/* Mobile Hamburger */}
+          <Drawer.Root colorPalette='red' placement={{ mdDown: "bottom", md: "end" }} size="xs">
+            <Drawer.Trigger asChild>
+              <IconButton borderRadius="50px" size="xs" display={{ base: "flex", md: "none" }}>
+                <LuMenu />
+              </IconButton>
+            </Drawer.Trigger>
+            <Portal>
+              <Drawer.Backdrop />
+              <Drawer.Positioner>
+                <Drawer.Content>
+                  <Drawer.Header>
+                    <Drawer.Title >Menu</Drawer.Title>
+                  </Drawer.Header>
+                  <Drawer.Body>
+                    <HStack display={{ base: "flex", md: "none" }} spacing={10} fontWeight="bold">
+                      <Link onClick={handleClick("projects")} color="#FFC300">Projects</Link>
+                      <Link onClick={handleClick("contactme")} color="#FFC300">Contact Me</Link>
+                    </HStack>
+                  </Drawer.Body>
+                  <Drawer.Footer>
+                    <Drawer.ActionTrigger asChild>
+                      <Button variant="outline">Cancel</Button>
+                    </Drawer.ActionTrigger>
+                  </Drawer.Footer>
+                  <Drawer.CloseTrigger asChild>
+                    <CloseButton size="sm" />
+                  </Drawer.CloseTrigger>
+                </Drawer.Content>
+              </Drawer.Positioner>
+            </Portal>
+          </Drawer.Root>
         </HStack>
       </Box>
     </Box>

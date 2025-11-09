@@ -14,7 +14,7 @@ const Footer = () => {
           maxWidth="1024px"
           height={16}
         >
-          <p>Pourya • © 2025</p>
+          <p>© {new Date().getFullYear()} Pourya — All rights reserved</p>
         </Flex>
       </footer>
     </Box>

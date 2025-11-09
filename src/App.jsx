@@ -6,6 +6,7 @@ import ContactMeSection from "./ContactMeSection";
 import { AlertProvider } from "../context/alertContext";
 import Alert from "./Alert";
 import Footer from "./Footer";
+import Experience from "./Experiences";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <main>
         <Header />
         <LandingSection />
+        <Experience />
         <ProjectsSection />
         <ContactMeSection />
         <Alert />
