@@ -14,7 +14,7 @@ const LandingSection = () => (
           PhD Researcher · Multimodal AI
         </span>
         <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-          Hi, I&apos;m Pourya — I build intelligent, privacy-first systems for
+          Hi, I&apos;m Pourya. I build intelligent, privacy-first systems for
           human-centered sensing.
         </h1>
         <p className="text-lg leading-relaxed text-slate-300">
