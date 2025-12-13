@@ -87,7 +87,7 @@ const ContactMeSection = () => {
               </label>
             </div>
 
-            <label className="space-y-2 text-sm font-semibold">
+            {/* <label className="space-y-2 text-sm font-semibold">
               <span>Type of enquiry</span>
               <select
                 id="type"
@@ -103,7 +103,7 @@ const ContactMeSection = () => {
                 <option value="other">Other</option>
               </select>
               {renderError("type")}
-            </label>
+            </label> */}
 
             <label className="space-y-2 text-sm font-semibold">
               <span>Your message</span>
