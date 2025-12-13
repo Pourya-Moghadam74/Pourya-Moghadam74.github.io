@@ -1,62 +1,42 @@
-import { useRef } from "react";
-import {
-  Dialog,
-  Portal,
-  CloseButton,
-  Text,
-} from "@chakra-ui/react";
+import React from "react";
 import { useAlertContext } from "../context/alertContext";
 
-function Alert() {
+const Alert = () => {
   const { isOpen, type, message, onClose } = useAlertContext();
-  const closeRef = useRef(null);
-  const isSuccess = type === "success" ;
-  return (
-    <Dialog.Root
-      role="alertdialog"                     // v3: use Dialog with alert role
-      open={isOpen}                          // v3: controlled open
-      onOpenChange={(e) => {                 // v3: notify context when closed
-        if (!e.open) onClose();
-      }}
-      placement="center"
-      motionPreset="slide-in-bottom"
-      closeOnInteractOutside={false}         // typical for alert dialogs
-      initialFocusEl={() => closeRef.current}
-    >
-      <Portal>
-        <Dialog.Backdrop />
-        <Dialog.Positioner>
-          <Dialog.Content
-            rounded="xl"
-            shadow="xl"
-            overflow="hidden"
-            bg={type === 'success' ? '#81C784' : type === 'error' ? '#FF8A65' : "yellow.50"}
-            color={type === 'success' ? "green.900" : type === 'error' ? "red.900" : "yellow.900"}
-            p="0"
-          >
-            <Dialog.Header
-              display="flex"
-              alignItems="center"
-              justifyContent="space-between"
-              px="6"
-              py="4"
-            >
-              <Dialog.Title fontSize="lg" fontWeight="bold">
-                {type === 'success' ? 'All good!' : type === 'error' ? 'Oops!' : 'Loading'}
-              </Dialog.Title>
-            <Dialog.CloseTrigger asChild>
-                <CloseButton ref={closeRef} size="sm" />
-            </Dialog.CloseTrigger>
-            </Dialog.Header>
 
-            <Dialog.Body px="6" pb="6">
-              <Text>{message}</Text>
-            </Dialog.Body>
-          </Dialog.Content>
-        </Dialog.Positioner>
-      </Portal>
-    </Dialog.Root>
+  if (!isOpen) return null;
+
+  const styles = {
+    success: "from-emerald-400/90 to-cyan-400/90 text-emerald-950",
+    error: "from-rose-400/90 to-orange-300/90 text-rose-950",
+    loading: "from-amber-300/90 to-accent/90 text-amber-950",
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-8">
+      <div
+        role="alert"
+        className="pointer-events-auto w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-slate-900/90 shadow-2xl shadow-cyan-500/20 backdrop-blur"
+      >
+        <div
+          className={`bg-gradient-to-r px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] ${styles[type] || styles.loading}`}
+        >
+          {type === "success" ? "All good" : type === "error" ? "Something went wrong" : "Working on it"}
+        </div>
+        <div className="flex items-start gap-3 px-5 py-4">
+          <div className="mt-1 h-3 w-3 rounded-full bg-accent shadow shadow-accent/50" />
+          <div className="flex-1 text-sm text-slate-100">{message}</div>
+          <button
+            onClick={onClose}
+            className="rounded-lg px-2 py-1 text-xs font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white"
+            aria-label="Close alert"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Alert;

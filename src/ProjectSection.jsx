@@ -1,8 +1,6 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Heading, SimpleGrid } from "@chakra-ui/react";
 import Card from "./Card";
-
 
 import photo1 from "../images/EdgeFusion-ACT.jpg";
 import photo2 from "../images/photo2.png";
@@ -13,25 +11,25 @@ const projects = [
   {
     title: "EdgeFusion-ACT",
     description:
-      "An intelligent multimodal system for monitoring daily activities using radar, vision, and load monitoring sensors. It fuses multiple data streams for privacy-preserving activity recognition, enabling seniors to live safely and independently.",
+      "Multimodal activity monitoring that fuses radar, vision, and smart-meter data at the edge for privacy-first independence.",
     imageSrc: photo1,
   },
   {
     title: "NILM Analyzer",
     description:
-      "A Non-Intrusive Load Monitoring (NILM) toolkit for disaggregating appliance-level power consumption from smart meter data. It features a modular PyTorch implementation, dataset harmonization tools, and real-time load visualization.",
+      "A modular NILM toolkit with harmonized datasets, PyTorch models, and realtime energy disaggregation dashboards.",
     imageSrc: photo2,
   },
   {
     title: "Activity Recognition Suite",
     description:
-      "A deep learning framework for recognizing human activities from video data using SlowFast and I3D models. Designed for multi-view datasets like Toyota Smarthome, it supports 5-fold cross-validation and customizable preprocessing.",
+      "Video action recognition with SlowFast and I3D pipelines, tuned for multi-view datasets and rigorous cross-validation.",
     imageSrc: photo3,
   },
   {
     title: "ResearchTool.ai",
     description:
-    "A Python-based web app that aggregates academic profiles from Google Scholar, Scopus, and Semantic Scholar. It automatically computes impact metrics, co-author networks, and citation analytics for streamlined research assessment.",
+      "Aggregates Scholar, Scopus, and Semantic Scholar to auto-build impact metrics, co-author graphs, and citation analytics.",
     imageSrc: photo4,
   },
 ];
@@ -39,39 +37,29 @@ const projects = [
 const ProjectsSection = () => {
   return (
     <FullScreenSection
-      as="section"
-      backgroundColor="#CBCBCB"
-      isDarkBackground={false}
-      p={{ base: 4, sm: 6, md: 8 }} // Responsive padding
-      alignItems="center"
-      spacing={{ base: 6, md: 8 }}
+      id="projects-section"
+      className="bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950"
+      overlay={false}
     >
-      <Heading
-        as="h1"
-        id="projects-section"
-        mb={{ base: 4, md: 6 }}
-        size={{ base: "lg", sm: "xl", md: "2xl" }} // Responsive font size
-        color="#001D3D"
-        textAlign={{ base: "center", md: "left" }}
-        w="full"
-      >
-        Featured Projects
-      </Heading>
+      <div className="mb-10 flex items-center justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            Selected Work
+          </p>
+          <h2 className="mt-2 text-3xl font-semibold text-white sm:text-4xl">
+            Featured Projects
+          </h2>
+        </div>
+        <span className="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200 md:inline-flex">
+          Edge AI · Research · Engineering
+        </span>
+      </div>
 
-      <SimpleGrid
-        columns={{ base: 1, sm: 1, md: 2, lg: 2 }} // Adjust column count
-        gap={{ base: 4, sm: 6, md: 8 }} // Responsive spacing
-        w="full"
-      >
+      <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((p) => (
-          <Card
-            key={p.title}
-            title={p.title}
-            description={p.description}
-            imageSrc={p.imageSrc}
-          />
+          <Card key={p.title} {...p} />
         ))}
-      </SimpleGrid>
+      </div>
     </FullScreenSection>
   );
 };

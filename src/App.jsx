@@ -1,4 +1,3 @@
-import { Box, Button, Flex, HStack, VStack } from "@chakra-ui/react"
 import Header from "./Header";
 import LandingSection from "./LandingSection";
 import ProjectsSection from "./ProjectSection";
@@ -11,15 +10,17 @@ import Experience from "./Experiences";
 function App() {
   return (
     <AlertProvider>
-      <main>
+      <div className="min-h-screen bg-gradient-to-br from-dusk via-ink to-black text-slate-100">
         <Header />
-        <LandingSection />
-        <Experience />
-        <ProjectsSection />
-        <ContactMeSection />
-        <Alert />
+        <main className="pt-24 space-y-0">
+          <LandingSection />
+          <Experience />
+          <ProjectsSection />
+          <ContactMeSection />
+        </main>
         <Footer />
-      </main>
+        <Alert />
+      </div>
     </AlertProvider>
   )
 }

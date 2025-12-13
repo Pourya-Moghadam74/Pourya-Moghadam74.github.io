@@ -12,6 +12,7 @@ const useSubmit = () => {
   const [response, setResponse] = useState(null);
   const { onOpen } = useAlertContext(); 
   const submit = async (url, data) => {
+    setLoading(true);
     const seccessMessage = `Thanks for your submission ${data.firstName}, we will get back to you shortly!`
     const random = Math.random();
     onOpen('loading', 'Your submission is in progress.')
