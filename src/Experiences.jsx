@@ -1,4 +1,5 @@
-import React from "react";
+﻿import React from "react";
+import { FaBriefcase, FaChalkboardTeacher, FaGraduationCap } from "react-icons/fa";
 import FullScreenSection from "./FullScreenSection";
 
 const sections = [
@@ -12,12 +13,12 @@ const sections = [
       },
       {
         place: "Amirkabir University of Technology, Iran",
-        period: "2019 — 2022",
+        period: "2019 - 2022",
         detail: "M.Sc., Industrial Engineering",
       },
       {
         place: "Amirkabir University of Technology, Iran",
-        period: "2014 — 2018",
+        period: "2014 - 2018",
         detail: "B.Sc., Industrial Engineering",
       },
     ],
@@ -33,7 +34,7 @@ const sections = [
       },
       {
         place: "Senior Data Analyst @ Digikala Group, Tehran",
-        period: "2018 — 2023",
+        period: "2018 - 2023",
         detail:
           "Designed databases, ETL, dashboards, and forecasting models with Python and T-SQL to surface insights for leadership.",
       },
@@ -43,7 +44,7 @@ const sections = [
     title: "Teaching",
     entries: [
       {
-        place: "University of Toronto · Teaching Assistant",
+        place: "University of Toronto - Teaching Assistant",
         period: "Multiple courses",
         bullets: [
           "CSC311 Introduction to Machine Learning (Labs, tutorials, grading)",
@@ -59,6 +60,12 @@ const sections = [
   },
 ];
 
+const sectionIcons = {
+  Education: <FaGraduationCap className="text-lg" />,
+  "Work Experience": <FaBriefcase className="text-lg" />,
+  Teaching: <FaChalkboardTeacher className="text-lg" />,
+};
+
 const Experience = () => (
   <FullScreenSection
     id="experience-section"
@@ -72,7 +79,7 @@ const Experience = () => (
         </p>
         <h2 className="text-3xl font-semibold text-white sm:text-4xl">Experience & Impact</h2>
         <p className="text-slate-300">
-          A mix of research, engineering, and teaching—focused on dependable AI systems that
+          A mix of research, engineering, and teaching focused on dependable AI systems that
           serve real people.
         </p>
       </div>
@@ -84,8 +91,8 @@ const Experience = () => (
             className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl shadow-cyan-500/10 backdrop-blur"
           >
             <div className="mb-4 flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-accent/20 text-center text-xl font-semibold text-accent shadow shadow-accent/30">
-                <span className="inline-block translate-y-2">·</span>
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/20 text-xl text-accent shadow shadow-accent/30">
+                {sectionIcons[section.title] || <span className="translate-y-[1px]">.</span>}
               </div>
               <h3 className="text-xl font-semibold text-white">{section.title}</h3>
             </div>
