@@ -1,9 +1,9 @@
 import React from "react";
 import { HiArrowRight } from "react-icons/hi";
-import { useAlertContext } from "../context/alertContext";
+import { Link } from "react-router-dom";
 
-export default function Card({ title, description, imageSrc }) {
-  const { onOpen } = useAlertContext();
+export default function Card({ title, description, imageSrc, url }) {
+  const isExternal = url?.startsWith("http");
 
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70 shadow-xl shadow-cyan-500/10 backdrop-blur">
@@ -15,20 +15,38 @@ export default function Card({ title, description, imageSrc }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
       </div>
+
       <div className="flex h-full flex-col gap-4 p-6">
         <div className="space-y-2">
           <h3 className="text-xl font-semibold text-white">{title}</h3>
-          <p className="text-sm leading-relaxed text-slate-300">{description}</p>
+          <p className="text-sm leading-relaxed text-slate-300">
+            {description}
+          </p>
         </div>
-        <button
-          onClick={() => onOpen("error", "This project page is not available yet.")}
-          className="group/cta inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:translate-x-1"
-        >
-          See more
-          <HiArrowRight className="h-4 w-4 transition group-hover/cta:translate-x-1" />
-        </button>
+
+        {url &&
+          (isExternal ? (
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="group/cta inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:translate-x-1"
+            >
+              See more
+              <HiArrowRight className="h-4 w-4 transition group-hover/cta:translate-x-1" />
+            </a>
+          ) : (
+            <Link
+              to={url}
+              className="group/cta inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:translate-x-1"
+            >
+              See more
+              <HiArrowRight className="h-4 w-4 transition group-hover/cta:translate-x-1" />
+            </Link>
+          ))}
       </div>
-      <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
         <div className="absolute -inset-10 bg-gradient-to-br from-cyan-400/10 via-accent/10 to-rose-400/10 blur-3xl" />
       </div>
     </article>

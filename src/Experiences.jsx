@@ -28,7 +28,7 @@ const sections = [
     entries: [
       {
         place: "Artificial Intelligence Specialist @ Masterly Inc, Toronto",
-        period: "Since 2024",
+        period: "Jan 2024 - April 2025",
         detail:
           "Developing production-grade large language model solutions, connecting AI systems to business-critical workflows.",
       },
@@ -47,13 +47,16 @@ const sections = [
         place: "University of Toronto - Teaching Assistant",
         period: "Multiple courses",
         bullets: [
-          "CSC311 Introduction to Machine Learning (Labs, tutorials, grading)",
-          "CSC490 Capstone Design Project (Tutorials, grading, project guidance)",
-          "CSC384 Intro to Artificial Intelligence (Office hours, grading)",
-          "CSC373 Algorithm Design and Analysis (Office hours, grading)",
-          "CSC263 Data Structures and Analysis (Tutorials, grading)",
-          "CSCB20 Database and Web Applications (Lab support, grading)",
-          "MIE367 Cases in Operations Research (Exam and assignment grading)",
+          "CSC263 Data Structures and Analysis",
+          "CSC301 Introduction to Software Engineering",
+          "CSC309 Programming on the web",
+          "CSC311 Introduction to Machine Learning",
+          "CSC358 Computer Networks",
+          "CSC373 Algorithm Desgins and Analysis",
+          "CSC384 Introduction to AI",
+          "CSC490 Capstone Design Project",
+          "MIE1512 Data Analytics",
+          "MIE367 Cases in Operations Research"
         ],
       },
     ],

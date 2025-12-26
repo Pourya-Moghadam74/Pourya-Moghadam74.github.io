@@ -21,16 +21,18 @@ const projects = [
     imageSrc: photo2,
   },
   {
-    title: "Activity Recognition Suite",
+    title: "EcoShop",
     description:
-      "Video action recognition with SlowFast and I3D pipelines, tuned for multi-view datasets and rigorous cross-validation.",
+      "A full-stack e-commerce platform built with React, Django REST Framework, and JWT authentication, featuring product management, cart workflows, and secure checkout.",
     imageSrc: photo3,
+    url: "https://pourya-moghadam74.github.io/Ecoshop/"
   },
   {
-    title: "ResearchTool.ai",
+    title: "GroqFlow",
     description:
-      "Aggregates Scholar, Scopus, and Semantic Scholar to auto-build impact metrics, co-author graphs, and citation analytics.",
+      "A real-time AI chatbot platform powered by Groq LLMs, featuring streaming responses, conversation persistence, and a ChatGPT-style UI.",
     imageSrc: photo4,
+    url: "https://pourya-moghadam74.github.io/chatbot/"
   },
 ];
 
