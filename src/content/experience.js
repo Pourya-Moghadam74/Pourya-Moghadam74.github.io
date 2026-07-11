@@ -14,7 +14,7 @@ export const experience = [
     startDate: "Jan 2024",
     endDate: "April 2025",
     summary:
-      "Developing production-grade large language model solutions, connecting AI systems to business-critical workflows.",
+      "Developed production-grade large language model solutions that connected AI systems to business-critical workflows.",
     highlights: [],
     technologies: [],
     category: "industry",

@@ -52,6 +52,7 @@ const ThesisFigure = ({ src, alt, caption, className = "" }) => (
 
 const ThesisProjectPage = () => (
   <div className="min-h-screen bg-page text-primary">
+    <a href="#thesis-main" className="skip-link">Skip to project content</a>
     <header className="border-b border-white/15 bg-ink text-white">
       <PageContainer className="flex min-h-[4.5rem] items-center justify-between gap-6">
         <a href="/#projects-section" className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-[#B8C3CF] hover:text-[#67E3EA]">
@@ -61,7 +62,7 @@ const ThesisProjectPage = () => (
       </PageContainer>
     </header>
 
-    <main>
+    <main id="thesis-main">
       <section className="bg-ink py-20 text-white sm:py-28">
         <PageContainer>
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#67E3EA]">Completed PhD project · University of Toronto</p>

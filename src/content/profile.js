@@ -9,7 +9,7 @@ export const profile = {
   headline: "I like building things that learn.",
   descriptor: "PhD · Applied AI · University of Toronto",
   biography:
-    "I'm a Machine Learning Engineer and PhD researcher at the University of Toronto. I enjoy building intelligent software, from search and recommendation systems to multimodal AI and LLM applications. My work combines machine learning, backend engineering, and thoughtful evaluation to turn research ideas into reliable products.",
+    "I'm a Machine Learning Engineer with a PhD from the University of Toronto. I enjoy building intelligent software, from search and recommendation systems to multimodal AI and LLM applications. My work combines machine learning, backend engineering, and thoughtful evaluation to turn research ideas into reliable products.",
   credibility: [
     "University of Toronto",
     "Machine Learning & Applied AI",

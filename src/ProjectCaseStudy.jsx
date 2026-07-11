@@ -81,9 +81,11 @@ const ProjectCaseStudy = ({ project, index }) => {
               ))}
             </div>
           ) : (
-            <p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.1em] text-muted">
-              Dedicated research case study planned
-            </p>
+            <div className="w-full border border-dashed border-subtle px-4 py-3">
+              <p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.1em] text-muted">
+                {project.actionPlaceholder || "Dedicated research case study planned"}
+              </p>
+            </div>
           )}
         </div>
       </div>

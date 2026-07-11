@@ -1,4 +1,7 @@
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { LuGraduationCap, LuMail } from "react-icons/lu";
 import Button from "./components/ui/Button";
+import IconLink from "./components/ui/IconLink";
 import Section from "./components/layout/Section";
 import { profile } from "./content/profile";
 import { socialLinks } from "./content/socialLinks";
@@ -7,6 +10,7 @@ const LandingSection = () => {
   const linkedIn = socialLinks.find((link) => link.id === "linkedin");
   const github = socialLinks.find((link) => link.id === "github");
   const googleScholar = socialLinks.find((link) => link.id === "google-scholar");
+  const email = socialLinks.find((link) => link.id === "email");
   const focusAreas = ["Machine Learning", "Applied AI systems", "LLM-powered products"];
 
   return (
@@ -88,10 +92,19 @@ const LandingSection = () => {
             </div>
           </dl>
 
-          <div className="flex flex-wrap gap-x-5 gap-y-3 border-t border-white/15 pt-5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#B8C3CF]">
-            {linkedIn?.url && <a className="hover:text-[#67E3EA]" href={linkedIn.url} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>}
-            {github?.url && <a className="hover:text-[#67E3EA]" href={github.url} target="_blank" rel="noopener noreferrer">GitHub ↗</a>}
-            {googleScholar?.url && <a className="hover:text-[#67E3EA]" href={googleScholar.url} target="_blank" rel="noopener noreferrer">Scholar ↗</a>}
+          <div className="flex items-center gap-2 border-t border-white/15 pt-5" aria-label="Professional profiles">
+            <IconLink label="LinkedIn" href={linkedIn?.url} external className="border border-[#5AA7E8]/50 !bg-[#5AA7E8]/[0.08] !text-[#70B7F1] hover:!border-[#70B7F1] hover:!bg-[#5AA7E8]/[0.16] hover:!text-white">
+              <FaLinkedinIn className="h-4 w-4" aria-hidden="true" />
+            </IconLink>
+            <IconLink label="GitHub" href={github?.url} external className="border border-white/30 !bg-white/[0.05] !text-[#E6EDF3] hover:!border-white/70 hover:!bg-white/[0.12] hover:!text-white">
+              <FaGithub className="h-4 w-4" aria-hidden="true" />
+            </IconLink>
+            <IconLink label="Google Scholar" href={googleScholar?.url} external className="border border-[#67E3EA]/50 !bg-[#67E3EA]/[0.08] !text-[#67E3EA] hover:!border-[#8CF1F5] hover:!bg-[#67E3EA]/[0.16] hover:!text-white">
+              <LuGraduationCap className="h-[1.1rem] w-[1.1rem]" aria-hidden="true" />
+            </IconLink>
+            <IconLink label="Email" href={email?.url} className="border border-white/20 !text-[#B8C3CF] hover:!border-[#67E3EA] hover:!bg-white/[0.06] hover:!text-[#67E3EA]">
+              <LuMail className="h-[1.1rem] w-[1.1rem]" aria-hidden="true" />
+            </IconLink>
           </div>
         </aside>
       </div>

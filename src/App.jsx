@@ -25,7 +25,11 @@ function App() {
   const hash = useHashRoute();
 
   useEffect(() => {
-    if (hash === "#/phd-research") window.scrollTo(0, 0);
+    const isThesisProject = hash === "#/phd-research";
+    document.title = isThesisProject
+      ? "Doctoral Research — Pourya Moghadam"
+      : "Pourya Moghadam — Machine Learning Engineer";
+    if (isThesisProject) window.scrollTo(0, 0);
   }, [hash]);
 
   if (hash === "#/phd-research") return <ThesisProjectPage />;
