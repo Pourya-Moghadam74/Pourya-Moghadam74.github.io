@@ -1,0 +1,160 @@
+import edgeFusionImage from "../../images/EdgeFusion-ACT.jpg";
+import nilmAnalyzerImage from "../../images/photo2.webp";
+import ecoShopImage from "../../images/photo3.webp";
+import groqFlowImage from "../../images/photo4.webp";
+
+export const projectsSection = {
+  eyebrow: "Selected Work",
+  title: "Featured Case Studies",
+  description:
+    "Selected systems that demonstrate machine learning, applied AI, evaluation, backend engineering, and deployment.",
+};
+
+export const projects = [
+  {
+    id: "ecoshop",
+    title: "EcoShop",
+    positioning: "Production-shaped ML system for intelligent product discovery",
+    summary:
+      "An end-to-end e-commerce discovery platform combining semantic search, hybrid ranking, behavior-based recommendations, product comparison, and a catalog-grounded shopping assistant.",
+    image: ecoShopImage,
+    imageAlt: "EcoShop product discovery application interface",
+    imageWidth: 1200,
+    imageHeight: 800,
+    highlights: [
+      "Hybrid semantic and keyword ranking",
+      "Behavior-based personalized recommendations",
+      "Offline evaluation with Precision@K, Recall@K, MRR, and NDCG",
+      "Dockerized deployment with observability and graceful AI fallbacks",
+    ],
+    technologyGroups: [
+      {
+        label: "Machine Learning",
+        items: ["Python", "Gemini"],
+      },
+      {
+        label: "Application",
+        items: ["Django REST Framework", "React", "PostgreSQL"],
+      },
+      {
+        label: "Deployment",
+        items: ["Docker", "Nginx"],
+      },
+    ],
+    repositoryUrl: "",
+    liveUrl: "https://pourya-moghadam74.github.io/Ecoshop/",
+    caseStudyUrl: "",
+    publicationUrl: "",
+    featured: true,
+    details: {},
+  },
+  {
+    id: "rag-agentic-ai",
+    title: "RAG and Agentic AI Application",
+    positioning: "",
+    summary: "",
+    image: "",
+    imageAlt: "",
+    imageWidth: null,
+    imageHeight: null,
+    highlights: [],
+    technologyGroups: [],
+    repositoryUrl: "",
+    liveUrl: "",
+    caseStudyUrl: "",
+    publicationUrl: "",
+    featured: true,
+    details: {
+      problem: "",
+      documentSources: [],
+      retrievalArchitecture: "",
+      chunking: "",
+      embeddings: "",
+      vectorDatabase: "",
+      reranking: "",
+      citations: "",
+      toolCalling: "",
+      langChain: "",
+      langGraph: "",
+      agentState: "",
+      evaluation: "",
+      deployment: "",
+      limitations: [],
+    },
+  },
+  {
+    id: "edgefusion-act",
+    title: "Privacy-Preserving Multimodal Activity Recognition",
+    positioning: "Non-visual multimodal AI for smart-home activity recognition",
+    summary:
+      "A multimodal machine learning system that combines mmWave radar and electricity signals to recognize Activities of Daily Living without continuous video recording.",
+    image: edgeFusionImage,
+    imageAlt: "Privacy-preserving multimodal activity recognition project",
+    imageWidth: 1200,
+    imageHeight: 700,
+    highlights: [
+      "Radar and electricity sensor fusion",
+      "Cross-modal and event-aware attention",
+      "Lightweight temporal modeling and quantization",
+      "Evaluation across scripted, cross-subject, and free-living settings",
+    ],
+    technologyGroups: [
+      {
+        label: "Machine Learning",
+        items: ["Python", "PyTorch", "Transformers", "Temporal CNNs", "Multimodal Learning"],
+      },
+      {
+        label: "Sensing",
+        items: ["mmWave Radar", "NILM"],
+      },
+      {
+        label: "Deployment-oriented",
+        items: ["Edge AI"],
+      },
+    ],
+    repositoryUrl: "",
+    liveUrl: "",
+    caseStudyUrl: "",
+    publicationUrl: "",
+    featured: true,
+    details: {},
+  },
+  {
+    id: "nilm-analyzer",
+    title: "NILM Analyzer",
+    positioning: "",
+    summary:
+      "A modular NILM toolkit with harmonized datasets, PyTorch models, and realtime energy disaggregation dashboards.",
+    image: nilmAnalyzerImage,
+    imageAlt: "NILM Analyzer project interface",
+    imageWidth: 1200,
+    imageHeight: 800,
+    highlights: [],
+    technologyGroups: [],
+    repositoryUrl: "",
+    liveUrl: "",
+    caseStudyUrl: "",
+    publicationUrl: "",
+    featured: false,
+    details: {},
+  },
+  {
+    id: "groqflow",
+    title: "GroqFlow",
+    positioning: "",
+    summary:
+      "A real-time AI chatbot platform powered by Groq LLMs, featuring streaming responses, conversation persistence, and a ChatGPT-style UI.",
+    image: groqFlowImage,
+    imageAlt: "GroqFlow chatbot application interface",
+    imageWidth: 1200,
+    imageHeight: 800,
+    highlights: [],
+    technologyGroups: [],
+    repositoryUrl: "",
+    liveUrl: "https://pourya-moghadam74.github.io/chatbot/",
+    caseStudyUrl: "",
+    publicationUrl: "",
+    featured: false,
+    details: {},
+  },
+];
