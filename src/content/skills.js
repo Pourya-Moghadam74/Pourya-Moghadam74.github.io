@@ -1,6 +1,6 @@
 export const capabilitiesSection = {
-  eyebrow: "Technical Expertise",
-  title: "Machine Learning Engineering Capabilities",
+  eyebrow: "03 / Capability matrix",
+  title: "From model behavior to operating systems.",
   description:
     "Capabilities demonstrated across production ML systems, applied AI projects, and multimodal research.",
 };

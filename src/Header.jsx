@@ -5,9 +5,9 @@ import { profile } from "./content/profile";
 
 const navigation = [
   { label: "Projects", href: "#projects-section" },
+  { label: "Capabilities", href: "#capabilities-section" },
   { label: "Experience", href: "#experience-section" },
   { label: "Research", href: "#research-section" },
-  { label: "Contact", href: "#contactme-section" },
 ];
 
 const Header = () => {
@@ -34,29 +34,34 @@ const Header = () => {
   }, [closeMenu, isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-subtle bg-page/90 backdrop-blur">
-      <PageContainer className="flex min-h-16 items-center justify-between gap-6">
+    <header className="sticky top-0 z-50 border-b border-subtle bg-page/95 backdrop-blur">
+      <PageContainer className="flex min-h-[4.5rem] items-center justify-between gap-6">
         <a
           href="#landing-section"
-          className="inline-flex items-center gap-3 rounded-control text-primary transition-colors duration-fast hover:text-accent-hover"
+          className="group inline-flex items-center gap-3 rounded-control text-primary transition-colors duration-fast hover:text-accent"
           aria-label={`${profile.name}, home`}
         >
           <span
-            className="inline-flex h-9 w-9 items-center justify-center rounded-control border border-subtle bg-surface text-sm font-bold tracking-tight text-accent"
+            className="inline-flex h-9 w-9 items-center justify-center border border-ink bg-ink font-mono text-xs font-bold tracking-[0.08em] text-white transition-colors group-hover:border-accent group-hover:bg-accent"
             aria-hidden="true"
           >
             PM
           </span>
-          <span className="text-sm font-semibold sm:text-base">{profile.name}</span>
+          <span>
+            <span className="block text-sm font-semibold leading-none">{profile.name}</span>
+            <span className="mt-1 hidden font-mono text-[10px] uppercase tracking-[0.12em] text-muted sm:block">
+              ML Engineer
+            </span>
+          </span>
         </a>
 
         <nav aria-label="Primary navigation" className="hidden md:block">
-          <ul className="flex items-center gap-7">
+          <ul className="flex items-center gap-6">
             {navigation.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="rounded-control px-1 py-2 text-sm font-medium text-secondary transition-colors duration-fast hover:text-accent-hover"
+                  className="rounded-control px-1 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-secondary transition-colors duration-fast hover:text-accent"
                 >
                   {item.label}
                 </a>
@@ -65,10 +70,19 @@ const Header = () => {
           </ul>
         </nav>
 
+        <a
+          href={profile.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden min-h-9 items-center border border-primary/30 px-4 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-primary transition-colors hover:border-accent hover:text-accent lg:inline-flex"
+        >
+          Résumé ↗
+        </a>
+
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-control border border-subtle text-primary transition-colors duration-fast hover:border-accent hover:text-accent-hover md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-control border border-subtle text-primary transition-colors duration-fast hover:border-accent hover:text-accent md:hidden"
           onClick={() => (isOpen ? closeMenu() : setIsOpen(true))}
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
@@ -89,12 +103,22 @@ const Header = () => {
                       ref={index === 0 ? firstMenuLinkRef : undefined}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="block rounded-control px-3 py-3 text-base font-medium text-primary transition-colors duration-fast hover:bg-surface-elevated hover:text-accent-hover"
+                      className="block rounded-control px-3 py-3 text-base font-medium text-primary transition-colors duration-fast hover:bg-surface-elevated hover:text-accent"
                     >
                       {item.label}
                     </a>
                   </li>
                 ))}
+                <li className="mt-2 border-t border-subtle pt-2">
+                  <a
+                    href={profile.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-3 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-accent"
+                  >
+                    View résumé ↗
+                  </a>
+                </li>
               </ul>
             </nav>
           </PageContainer>

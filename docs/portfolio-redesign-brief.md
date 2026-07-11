@@ -11,7 +11,7 @@ Secondary target roles are:
 - Applied Scientist
 - Research Engineer
 
-The supporting descriptor is **PhD Researcher in Applied AI and Multimodal Machine Learning**.
+The supporting descriptor is **PhD · Applied AI and Multimodal Machine Learning**.
 
 The core recruiter message is:
 
@@ -74,7 +74,7 @@ The hero must communicate role and capability within ten seconds.
 
 - **Name:** Pourya Moghadam
 - **Primary title:** Machine Learning Engineer
-- **Secondary descriptor:** PhD Researcher in Applied AI and Multimodal Machine Learning
+- **Secondary descriptor:** PhD · Applied AI and Multimodal Machine Learning
 - **Value proposition:** “I build end-to-end machine learning systems, from data and ranking models to APIs, evaluation, observability, and deployment. My work spans intelligent search, recommendation, RAG, agentic AI, and privacy-preserving sensing.”
 - **Primary action:** View Projects
 - **Secondary action:** Connect on LinkedIn

@@ -1,5 +1,6 @@
 export const experienceSection = {
-  title: "Experience",
+  eyebrow: "04 / Experience",
+  title: "Applied across research and industry.",
   description:
     "Research and industry experience across machine learning, applied AI, data systems, and technical education.",
 };
@@ -8,17 +9,17 @@ export const experience = [
   {
     id: "utoronto-phd-researcher",
     organization: "University of Toronto",
-    role: "PhD Researcher",
+    role: "Doctoral Researcher",
     location: "Toronto, Canada",
-    startDate: "Since 2023",
-    endDate: "",
+    startDate: "2023",
+    endDate: "2026",
     summary:
       "Machine learning research in privacy-preserving multimodal activity recognition.",
     highlights: [
-      "Developing multimodal machine learning systems that combine mmWave radar and electricity signals for activity recognition.",
-      "Investigating cross-modal and event-aware attention for sensor fusion.",
-      "Exploring lightweight temporal modeling, quantization, and edge-oriented model optimization.",
-      "Evaluating models across scripted, cross-subject, and free-living settings.",
+      "Developed multimodal machine learning systems that combine mmWave radar and electricity signals for activity recognition.",
+      "Investigated cross-modal and event-aware attention for sensor fusion.",
+      "Explored lightweight temporal modeling, quantization, and edge-oriented model optimization.",
+      "Evaluated models across scripted, cross-subject, and free-living settings.",
     ],
     technologies: [
       "PyTorch",

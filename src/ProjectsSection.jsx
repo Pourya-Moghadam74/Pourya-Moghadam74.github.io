@@ -19,12 +19,12 @@ const ProjectsSection = () => {
         description={projectsSection.description}
       />
 
-      <div className="mt-10 space-y-8 lg:mt-12 lg:space-y-10">
+      <div className="mt-12 space-y-8 lg:mt-16 lg:space-y-12">
         {featuredProjects.map((project, index) => (
           <ProjectCaseStudy
             key={project.id}
             project={project}
-            imageOnRight={index % 2 === 1}
+            index={index}
           />
         ))}
       </div>

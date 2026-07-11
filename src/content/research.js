@@ -1,5 +1,6 @@
 export const researchSection = {
-  title: "Research & Publications",
+  eyebrow: "05 / Research dossier",
+  title: "Rigorous evaluation for real sensing problems.",
   description:
     "Research at the intersection of machine learning, multimodal sensing, privacy-preserving AI, and intelligent healthcare systems.",
 };
@@ -40,12 +41,12 @@ export const researchTopics = [
   {
     id: "edge-ai",
     title: "Edge AI",
-    description: "Investigating lightweight, quantized models for deployment-oriented inference.",
+    description: "Investigated lightweight, quantized models for deployment-oriented inference.",
   },
   {
     id: "smart-healthcare",
     title: "Smart Healthcare",
-    description: "Exploring privacy-conscious sensing systems for smart-home healthcare research.",
+    description: "Explored privacy-conscious sensing systems for smart-home healthcare research.",
   },
   {
     id: "machine-learning-systems",

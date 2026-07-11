@@ -1,92 +1,70 @@
 import { HiArrowRight } from "react-icons/hi";
 import Button from "./components/ui/Button";
-import Panel from "./components/ui/Panel";
 import Tag from "./components/ui/Tag";
 
 const getActions = (project) => [
-  { label: "View Case Study", url: project.caseStudyUrl, variant: "primary" },
-  { label: "Live Demo", url: project.liveUrl, variant: "secondary" },
+  { label: "Visit Project", url: project.caseStudyUrl, variant: "primary" },
+  { label: "Visit Website", url: project.liveUrl, variant: "secondary" },
   { label: "GitHub", url: project.repositoryUrl, variant: "ghost" },
   { label: "Publication", url: project.publicationUrl, variant: "ghost" },
 ];
 
-const ProjectCaseStudy = ({ project, imageOnRight = false }) => {
+const ProjectCaseStudy = ({ project, index }) => {
   const actions = getActions(project).filter((action) => action.url);
   const technologyGroups = project.technologyGroups.filter((group) => group.items.length > 0);
-  const hasImage = Boolean(project.image);
 
   return (
-    <Panel
-      as="article"
-      className="overflow-hidden bg-surface-elevated transition duration-normal motion-safe:hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-panel"
-    >
-      <div
-        className={
-          hasImage
-            ? "grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch"
-            : ""
-        }
-      >
-        {hasImage && (
-          <div
-            className={`overflow-hidden border-b border-subtle bg-page p-4 sm:p-6 lg:flex lg:items-center lg:border-b-0 ${
-              imageOnRight ? "lg:order-2 lg:border-l" : "lg:border-r"
-            }`}
-          >
-            <img
-              src={project.image}
-              alt={project.imageAlt}
-              width={project.imageWidth}
-              height={project.imageHeight}
-              loading="lazy"
-              className="aspect-video h-auto w-full rounded-control border border-subtle object-cover shadow-control transition-transform duration-normal motion-safe:hover:scale-[1.01]"
-            />
-          </div>
-        )}
+    <article className="group overflow-hidden border border-subtle bg-page transition-colors duration-normal hover:border-primary/35">
+      <div className="grid lg:grid-cols-[9rem_minmax(0,1fr)_18rem]">
+        <div className="border-b border-subtle p-5 lg:border-b-0 lg:border-r lg:p-6">
+          <p className="font-mono text-xs font-semibold text-accent">{String(index + 1).padStart(2, "0")}</p>
+          <p className="mt-2 font-mono text-[10px] uppercase leading-relaxed tracking-[0.1em] text-muted">{project.category}</p>
+        </div>
 
-        <div className={`p-6 sm:p-8 lg:p-10 ${imageOnRight && hasImage ? "lg:order-1" : ""}`}>
-          <div className="max-w-reading">
-            <h3 className="text-2xl font-semibold text-primary sm:text-3xl">{project.title}</h3>
+        <div className="p-6 sm:p-8 lg:p-10">
+          <div className="max-w-3xl">
+            <div className="flex flex-wrap items-center gap-3">
+              <h3 className="text-3xl font-semibold tracking-tight text-primary sm:text-4xl">{project.title}</h3>
+              <span className="border border-subtle bg-surface-elevated px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-secondary">
+                {project.status}
+              </span>
+            </div>
             {project.positioning && (
-              <p className="mt-3 font-medium text-accent">{project.positioning}</p>
+              <p className="mt-4 text-lg font-medium text-primary">{project.positioning}</p>
             )}
             {project.summary && (
-              <p className="mt-4 leading-relaxed text-secondary">{project.summary}</p>
+              <p className="mt-4 max-w-reading leading-relaxed text-secondary">{project.summary}</p>
             )}
           </div>
 
-          {project.highlights.length > 0 && (
-            <ul className="mt-6 grid gap-3 text-sm text-primary sm:grid-cols-2">
-              {project.highlights.map((highlight) => (
-                <li key={highlight} className="flex gap-3 leading-relaxed">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                  <span>{highlight}</span>
-                </li>
-              ))}
-            </ul>
+          {project.engineeringSummary && (
+            <div className="mt-7 border-t border-subtle pt-5">
+              <h4 className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-muted">Engineering approach</h4>
+              <p className="mt-3 max-w-3xl leading-relaxed text-secondary">{project.engineeringSummary}</p>
+            </div>
           )}
 
           {technologyGroups.length > 0 && (
-            <div className="mt-7 space-y-4">
+            <div className="mt-6 grid gap-5 border-t border-subtle pt-5 sm:grid-cols-2 xl:grid-cols-3">
               {technologyGroups.map((group) => (
                 <div key={group.label}>
-                  <h4 className="mb-2 text-xs font-semibold uppercase tracking-eyebrow text-muted">
+                  <h4 className="mb-3 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-muted">
                     {group.label}
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-x-3 gap-y-2">
                     {group.items.map((technology) => (
-                      <Tag key={technology} className="text-xs">
-                        {technology}
-                      </Tag>
+                      <Tag key={technology}>{technology}</Tag>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
           )}
+        </div>
 
-          {actions.length > 0 && (
-            <div className="mt-8 flex flex-wrap gap-3">
+        <div className="flex items-start border-t border-subtle bg-surface-elevated p-6 lg:border-l lg:border-t-0 lg:pt-10">
+          {actions.length > 0 ? (
+            <div className="flex w-full flex-col gap-2">
               {actions.map((action) => (
                 <Button
                   key={action.label}
@@ -94,6 +72,7 @@ const ProjectCaseStudy = ({ project, imageOnRight = false }) => {
                   href={action.url}
                   external={action.url.startsWith("http")}
                   variant={action.variant}
+                  className="w-full justify-between"
                   aria-label={`${action.label} for ${project.title}`}
                 >
                   {action.label}
@@ -101,10 +80,14 @@ const ProjectCaseStudy = ({ project, imageOnRight = false }) => {
                 </Button>
               ))}
             </div>
+          ) : (
+            <p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.1em] text-muted">
+              Dedicated research case study planned
+            </p>
           )}
         </div>
       </div>
-    </Panel>
+    </article>
   );
 };
 

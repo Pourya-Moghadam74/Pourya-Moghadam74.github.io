@@ -1,139 +1,50 @@
-import React, { useEffect } from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import { HiArrowRight } from "react-icons/hi";
 import FullScreenSection from "./FullScreenSection";
-import useSubmit from "../hooks/useSubmit";
 import { profile } from "./content/profile";
 import { contactFocusAreas } from "./content/skills";
 import Button from "./components/ui/Button";
-import Panel from "./components/ui/Panel";
-import SectionHeading from "./components/ui/SectionHeading";
 import Tag from "./components/ui/Tag";
+import { socialLinks } from "./content/socialLinks";
 
 const ContactMeSection = () => {
-  const { isLoading, response, submit } = useSubmit();
-
-  const formik = useFormik({
-    initialValues: {
-      firstName: "",
-      email: "",
-      comment: "",
-    },
-    onSubmit: (values) => submit("https://api.example.com/contact", values),
-    validationSchema: Yup.object({
-      firstName: Yup.string()
-        .max(20, "Name must be at most 20 characters")
-        .required("Required"),
-      email: Yup.string().email("Invalid Email address").required("Required"),
-      comment: Yup.string().required("Required"),
-    }),
-  });
-
-  const { resetForm } = formik;
-
-  useEffect(() => {
-    if (response?.type === "success") {
-      resetForm();
-    }
-  }, [response, resetForm]);
-
-  const renderError = (field) =>
-    formik.touched[field] && formik.errors[field] ? (
-      <p id={`${field}-error`} className="text-xs font-semibold text-error">
-        {formik.errors[field]}
-      </p>
-    ) : null;
+  const linkedIn = socialLinks.find((link) => link.id === "linkedin");
 
   return (
     <FullScreenSection
       id="contactme-section"
-      className="bg-surface"
+      ariaLabelledby="contact-title"
+      className="bg-ink text-white"
       overlay={false}
     >
-      <div className="grid items-start gap-10 lg:grid-cols-[1.1fr,0.9fr]">
-        <div className="space-y-4">
-          <SectionHeading
-            eyebrow="Get in touch"
-            title="Contact me"
-            description={profile.contactIntroduction}
-          />
-          <div className="flex flex-wrap gap-3 pt-2 text-sm text-secondary">
-            <Tag>{profile.location}</Tag>
+      <div className="grid gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] lg:items-end">
+        <div>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#67E3EA]">06 / Contact</p>
+          <h2 id="contact-title" className="mt-6 max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-6xl">
+            Let’s build a machine learning system that earns trust in production.
+          </h2>
+          <p className="mt-6 max-w-reading text-lg leading-relaxed text-[#B8C3CF]">{profile.contactIntroduction}</p>
+          <div className="mt-8 flex flex-wrap gap-3 text-sm text-[#B8C3CF]">
+            <Tag className="!text-[#B8C3CF]">{profile.location}</Tag>
             {contactFocusAreas.map((focusArea) => (
-              <Tag key={focusArea.id}>
+              <Tag key={focusArea.id} className="!text-[#B8C3CF]">
                 {focusArea.label}
               </Tag>
             ))}
           </div>
         </div>
 
-        <Panel className="bg-surface-elevated p-6 shadow-none sm:p-7">
-          <form onSubmit={formik.handleSubmit} className="space-y-4 text-primary">
-            <div className="grid gap-4 md:grid-cols-2">
-              <label className="space-y-2 text-sm font-semibold">
-                <span>Name</span>
-                <input
-                  id="firstName"
-                  name="firstName"
-                  type="text"
-                  autoComplete="name"
-                  aria-invalid={Boolean(formik.touched.firstName && formik.errors.firstName)}
-                  aria-describedby={
-                    formik.touched.firstName && formik.errors.firstName
-                      ? "firstName-error"
-                      : undefined
-                  }
-                  className="w-full rounded-control border border-subtle bg-page px-4 py-3 text-sm text-primary placeholder:text-muted focus:border-accent focus:outline-none"
-                  {...formik.getFieldProps("firstName")}
-                />
-                {renderError("firstName")}
-              </label>
-
-              <label className="space-y-2 text-sm font-semibold">
-                <span>Email</span>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  aria-invalid={Boolean(formik.touched.email && formik.errors.email)}
-                  aria-describedby={
-                    formik.touched.email && formik.errors.email ? "email-error" : undefined
-                  }
-                  className="w-full rounded-control border border-subtle bg-page px-4 py-3 text-sm text-primary placeholder:text-muted focus:border-accent focus:outline-none"
-                  {...formik.getFieldProps("email")}
-                />
-                {renderError("email")}
-              </label>
-            </div>
-
-            <label className="space-y-2 text-sm font-semibold">
-              <span>Your message</span>
-              <textarea
-                id="comment"
-                name="comment"
-                rows="6"
-                aria-invalid={Boolean(formik.touched.comment && formik.errors.comment)}
-                aria-describedby={
-                  formik.touched.comment && formik.errors.comment ? "comment-error" : undefined
-                }
-                className="w-full rounded-control border border-subtle bg-page px-4 py-3 text-sm text-primary placeholder:text-muted focus:border-accent focus:outline-none"
-                value={formik.values.comment}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-              {renderError("comment")}
-            </label>
-
-            <Button
-              type="submit"
-              disabled={isLoading}
-              className="w-full"
-            >
-              {isLoading ? "Submitting..." : "Submit"}
+        <div className="border border-white/20 bg-white/[0.04] p-6 sm:p-8">
+          <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#8392A5]">Preferred channel</p>
+          <a href={`mailto:${profile.email}`} className="mt-3 block break-all text-lg font-semibold text-white hover:text-[#67E3EA]">{profile.email}</a>
+          <Button as="a" href={`mailto:${profile.email}`} className="mt-7 w-full !border-accent !bg-accent !text-white hover:!bg-accent-hover hover:!text-ink">
+            Start a conversation <HiArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Button>
+          {linkedIn?.url && (
+            <Button as="a" href={linkedIn.url} external variant="secondary" className="mt-3 w-full !border-white/30 !text-white hover:!border-[#67E3EA] hover:!text-[#67E3EA]">
+              Connect on LinkedIn
             </Button>
-          </form>
-        </Panel>
+          )}
+        </div>
       </div>
     </FullScreenSection>
   );

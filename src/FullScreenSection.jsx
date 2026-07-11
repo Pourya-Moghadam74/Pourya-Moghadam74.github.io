@@ -3,6 +3,7 @@ import Section from "./components/layout/Section";
 const FullScreenSection = ({
   children,
   id,
+  ariaLabelledby,
   className = "",
   background,
   overlay = true,
@@ -10,6 +11,7 @@ const FullScreenSection = ({
 }) => (
   <Section
     id={id}
+    ariaLabelledby={ariaLabelledby}
     className={className}
     overlay={overlay}
     style={background ? { background, ...style } : style}

@@ -1,4 +1,3 @@
-import Panel from "./components/ui/Panel";
 import Section from "./components/layout/Section";
 import SectionHeading from "./components/ui/SectionHeading";
 import Tag from "./components/ui/Tag";
@@ -21,28 +20,24 @@ const ExperienceSection = () => {
     >
       <SectionHeading
         id="experience-title"
+        eyebrow={experienceSection.eyebrow}
         title={experienceSection.title}
         description={experienceSection.description}
       />
 
-      <ol className="relative mt-10 space-y-10 border-l border-subtle pl-6 sm:pl-8 lg:mt-12">
-        {featuredExperience.map((item) => (
-          <li key={item.id} className="relative">
-            <span
-              className="absolute -left-[1.9rem] top-2 h-3 w-3 rounded-full border-2 border-accent bg-surface sm:-left-[2.4rem]"
-              aria-hidden="true"
-            />
+      <ol className="mt-12 border-y border-subtle lg:mt-16">
+        {featuredExperience.map((item, index) => (
+          <li key={item.id} className="grid border-b border-subtle last:border-b-0 lg:grid-cols-[11rem_minmax(0,1fr)]">
+            <div className="border-b border-subtle bg-surface-elevated p-5 lg:border-b-0 lg:border-r lg:p-7">
+              <p className="font-mono text-xs font-semibold text-accent">{String(index + 1).padStart(2, "0")}</p>
+              <p className="mt-4 font-mono text-[10px] uppercase leading-relaxed tracking-[0.1em] text-secondary">{formatDateRange(item.startDate, item.endDate)}</p>
+              {item.location && <p className="mt-2 font-mono text-[10px] text-muted">{item.location}</p>}
+            </div>
 
-            <article className="max-w-4xl border-b border-subtle pb-10">
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-primary sm:text-2xl">{item.role}</h3>
-                  <p className="mt-1 font-medium text-accent">{item.organization}</p>
-                </div>
-                <div className="shrink-0 text-sm leading-relaxed text-secondary sm:text-right">
-                  <p>{formatDateRange(item.startDate, item.endDate)}</p>
-                  {item.location && <p>{item.location}</p>}
-                </div>
+            <article className="p-6 sm:p-8 lg:p-10">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent">{item.organization}</p>
+                <h3 className="mt-3 text-2xl font-semibold text-primary sm:text-3xl">{item.role}</h3>
               </div>
 
               {item.summary && (
@@ -53,7 +48,7 @@ const ExperienceSection = () => {
                 <ul className="mt-5 grid gap-3 text-sm leading-relaxed text-primary md:grid-cols-2">
                   {item.highlights.map((highlight) => (
                     <li key={highlight} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                      <span className="mt-2 h-px w-4 shrink-0 bg-accent" aria-hidden="true" />
                       {highlight}
                     </li>
                   ))}
@@ -72,27 +67,39 @@ const ExperienceSection = () => {
             </article>
           </li>
         ))}
-      </ol>
-
-      <Panel as="aside" className="mt-10 max-w-4xl bg-surface-elevated p-5 shadow-none sm:p-6">
-        <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-          <div>
-            <h3 className="text-lg font-semibold text-primary">Technical Teaching</h3>
-            <p className="mt-1 text-sm text-secondary">
-              {technicalTeaching.role} · {technicalTeaching.institution}
+        <li className="grid lg:grid-cols-[11rem_minmax(0,1fr)]">
+          <div className="border-b border-subtle bg-surface-elevated p-5 lg:border-b-0 lg:border-r lg:p-7">
+            <p className="font-mono text-xs font-semibold text-accent">
+              {String(featuredExperience.length + 1).padStart(2, "0")}
             </p>
+            <p className="mt-4 font-mono text-[10px] uppercase leading-relaxed tracking-[0.1em] text-secondary">
+              {technicalTeaching.period}
+            </p>
+            <p className="mt-2 font-mono text-[10px] text-muted">Toronto, Canada</p>
           </div>
-          <p className="text-sm text-muted">{technicalTeaching.period}</p>
-        </div>
 
-        <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-subtle pt-4">
-          {featuredCourses.map((course) => (
-            <li key={course.id} className="text-sm text-secondary">
-              {course.title}
-            </li>
-          ))}
-        </ul>
-      </Panel>
+          <article className="p-6 sm:p-8 lg:p-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent">
+              {technicalTeaching.institution}
+            </p>
+            <h3 className="mt-3 text-2xl font-semibold text-primary sm:text-3xl">
+              Technical Teaching
+            </h3>
+            <p className="mt-5 max-w-reading leading-relaxed text-secondary">
+              {technicalTeaching.role} across machine learning, artificial intelligence, software engineering, algorithms, and data analytics.
+            </p>
+
+            <ul className="mt-5 grid gap-3 text-sm leading-relaxed text-primary md:grid-cols-2">
+              {featuredCourses.map((course) => (
+                <li key={course.id} className="flex gap-3">
+                  <span className="mt-2 h-px w-4 shrink-0 bg-accent" aria-hidden="true" />
+                  {course.title}
+                </li>
+              ))}
+            </ul>
+          </article>
+        </li>
+      </ol>
     </Section>
   );
 };

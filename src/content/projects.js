@@ -1,23 +1,22 @@
-import edgeFusionImage from "../../images/EdgeFusion-ACT.jpg";
-import nilmAnalyzerImage from "../../images/photo2.webp";
-import ecoShopImage from "../../images/photo3.webp";
-import groqFlowImage from "../../images/photo4.webp";
-
 export const projectsSection = {
-  eyebrow: "Selected Work",
-  title: "Featured Case Studies",
+  eyebrow: "02 / Selected systems",
+  title: "Evidence, not a tool inventory.",
   description:
-    "Selected systems that demonstrate machine learning, applied AI, evaluation, backend engineering, and deployment.",
+    "Three systems spanning product discovery, agentic AI, and privacy-preserving sensing—framed by the problem, engineering decisions, and evaluation approach.",
 };
 
 export const projects = [
   {
     id: "ecoshop",
     title: "EcoShop",
+    status: "Production-shaped system",
+    category: "Search · Ranking · Recommendation",
     positioning: "Production-shaped ML system for intelligent product discovery",
     summary:
       "An end-to-end e-commerce discovery platform combining semantic search, hybrid ranking, behavior-based recommendations, product comparison, and a catalog-grounded shopping assistant.",
-    image: ecoShopImage,
+    engineeringSummary:
+      "EcoShop routes catalog data through semantic and keyword retrieval, hybrid ranking, personalized recommendations, and a REST API. Relevance is evaluated offline with Precision@K, Recall@K, MRR, and NDCG, while structured logging, health checks, and deterministic fallbacks keep the system observable and resilient when AI services fail.",
+    image: "",
     imageAlt: "EcoShop product discovery application interface",
     imageWidth: 1200,
     imageHeight: 800,
@@ -26,6 +25,12 @@ export const projects = [
       "Behavior-based personalized recommendations",
       "Offline evaluation with Precision@K, Recall@K, MRR, and NDCG",
       "Dockerized deployment with observability and graceful AI fallbacks",
+    ],
+    architecture: ["Product catalog", "Embeddings + keywords", "Hybrid ranker", "Recommendations", "REST API", "Evaluation"],
+    evidence: [
+      { label: "Relevance", value: "Precision@K · Recall@K · MRR · NDCG" },
+      { label: "Operations", value: "Structured logs · request IDs · health checks" },
+      { label: "Resilience", value: "Deterministic fallbacks for AI-provider failures" },
     ],
     technologyGroups: [
       {
@@ -42,25 +47,42 @@ export const projects = [
       },
     ],
     repositoryUrl: "",
-    liveUrl: "https://pourya-moghadam74.github.io/Ecoshop/",
+    liveUrl: "https://ecoshop.dev",
     caseStudyUrl: "",
     publicationUrl: "",
     featured: true,
     details: {},
   },
   {
-    id: "rag-agentic-ai",
-    title: "RAG and Agentic AI Application",
-    positioning: "",
-    summary: "",
+    id: "cortex",
+    title: "CORTEX",
+    status: "In development",
+    category: "Agentic AI · Multimodal workflows",
+    positioning: "A model-flexible workspace for agentic document and image workflows",
+    summary:
+      "An agentic AI application designed to work across multiple models, process documents and images, call functions and tools, connect through MCP, and maintain memory across workflows.",
+    engineeringSummary:
+      "CORTEX is being designed around a model router and agent runtime that can coordinate multimodal inputs, tools, MCP services, and persistent memory. Its detailed retrieval, evaluation, and deployment architecture will be documented as the system matures.",
     image: "",
     imageAlt: "",
     imageWidth: null,
     imageHeight: null,
-    highlights: [],
-    technologyGroups: [],
+    highlights: [
+      "Model-flexible orchestration",
+      "Document and image processing",
+      "Function calling and tool use",
+      "MCP connections and persistent memory",
+    ],
+    architecture: ["Documents + images", "Model router", "Agent runtime", "Tools + MCP", "Memory", "Response"],
+    evidence: [],
+    technologyGroups: [
+      {
+        label: "Confirmed scope",
+        items: ["Multimodal input", "Function calling", "Tool calling", "MCP", "Memory"],
+      },
+    ],
     repositoryUrl: "",
-    liveUrl: "",
+    liveUrl: "https://cortex.dev",
     caseStudyUrl: "",
     publicationUrl: "",
     featured: true,
@@ -85,10 +107,14 @@ export const projects = [
   {
     id: "edgefusion-act",
     title: "Privacy-Preserving Multimodal Activity Recognition",
+    status: "Completed doctoral research",
+    category: "Multimodal ML · Edge AI",
     positioning: "Non-visual multimodal AI for smart-home activity recognition",
     summary:
       "A multimodal machine learning system that combines mmWave radar and electricity signals to recognize Activities of Daily Living without continuous video recording.",
-    image: edgeFusionImage,
+    engineeringSummary:
+      "The system encodes radar and electricity time series before applying cross-modal fusion for activity recognition. It was evaluated across scripted, cross-subject, and free-living settings, with lightweight temporal modeling and quantization explored for privacy-conscious edge inference.",
+    image: "",
     imageAlt: "Privacy-preserving multimodal activity recognition project",
     imageWidth: 1200,
     imageHeight: 700,
@@ -97,6 +123,12 @@ export const projects = [
       "Cross-modal and event-aware attention",
       "Lightweight temporal modeling and quantization",
       "Evaluation across scripted, cross-subject, and free-living settings",
+    ],
+    architecture: ["mmWave radar", "Electricity signals", "Temporal encoders", "Cross-modal fusion", "Activity recognition"],
+    evidence: [
+      { label: "Protocol", value: "Scripted · cross-subject · free-living" },
+      { label: "Privacy", value: "Non-visual sensing in place of continuous video" },
+      { label: "Efficiency", value: "Lightweight temporal modeling · quantization" },
     ],
     technologyGroups: [
       {
@@ -114,7 +146,7 @@ export const projects = [
     ],
     repositoryUrl: "",
     liveUrl: "",
-    caseStudyUrl: "",
+    caseStudyUrl: "#/phd-research",
     publicationUrl: "",
     featured: true,
     details: {},
@@ -125,7 +157,7 @@ export const projects = [
     positioning: "",
     summary:
       "A modular NILM toolkit with harmonized datasets, PyTorch models, and realtime energy disaggregation dashboards.",
-    image: nilmAnalyzerImage,
+    image: "",
     imageAlt: "NILM Analyzer project interface",
     imageWidth: 1200,
     imageHeight: 800,
@@ -144,7 +176,7 @@ export const projects = [
     positioning: "",
     summary:
       "A real-time AI chatbot platform powered by Groq LLMs, featuring streaming responses, conversation persistence, and a ChatGPT-style UI.",
-    image: groqFlowImage,
+    image: "",
     imageAlt: "GroqFlow chatbot application interface",
     imageWidth: 1200,
     imageHeight: 800,
