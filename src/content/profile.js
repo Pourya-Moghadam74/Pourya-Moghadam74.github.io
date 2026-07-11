@@ -6,10 +6,10 @@ export const profile = {
   imageAlt: "Portrait of Pourya Moghadam",
   eyebrow: "Machine Learning Engineer",
   greeting: "Pourya Moghadam",
-  headline: "I engineer machine learning systems from retrieval and ranking to evaluation and deployment.",
-  descriptor: "PhD · Applied AI and Multimodal Machine Learning",
+  headline: "I like building things that learn.",
+  descriptor: "PhD · Applied AI · University of Toronto",
   biography:
-    "I design and deploy end-to-end machine learning systems spanning intelligent search, recommendation, multimodal AI, RAG, and agentic workflows. My work combines research, backend engineering, evaluation, and production deployment.",
+    "I'm a Machine Learning Engineer and PhD researcher at the University of Toronto. I enjoy building intelligent software, from search and recommendation systems to multimodal AI and LLM applications. My work combines machine learning, backend engineering, and thoughtful evaluation to turn research ideas into reliable products.",
   credibility: [
     "University of Toronto",
     "Machine Learning & Applied AI",

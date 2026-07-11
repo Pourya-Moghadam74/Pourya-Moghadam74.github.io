@@ -5,7 +5,6 @@ import SectionHeading from "./components/ui/SectionHeading";
 import { researchSection } from "./content/research";
 import { publications } from "./content/publications";
 import { socialLinks } from "./content/socialLinks";
-import { thesis } from "./content/thesis";
 
 const getPublicationActions = (publication) => [
   { label: "Publication", url: publication.publicationUrl },
@@ -16,7 +15,6 @@ const getPublicationActions = (publication) => [
 const ResearchSection = () => {
   const selectedPublications = publications.filter((publication) => publication.featured);
   const googleScholar = socialLinks.find((link) => link.id === "google-scholar");
-  const thesisUrl = thesis.pdfUrl || thesis.publicationUrl;
 
   return (
     <Section
@@ -31,33 +29,8 @@ const ResearchSection = () => {
         description={researchSection.description}
       />
 
-      <div className="mt-12 grid border-y border-subtle lg:mt-16 lg:grid-cols-[minmax(18rem,0.7fr)_minmax(0,1.3fr)]">
-        <article className="bg-surface-elevated p-7 sm:p-10 lg:border-r lg:border-subtle">
-          <div className="border-l-2 border-accent pl-5">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
-              {thesis.label}
-            </p>
-            <h3 className="mt-3 text-2xl font-semibold text-primary">{thesis.title}</h3>
-            <p className="mt-2 font-medium text-accent">{thesis.institution}</p>
-            <p className="mt-4 leading-relaxed text-secondary">{thesis.summary}</p>
-
-            {thesisUrl && (
-              <Button
-                as="a"
-                href={thesisUrl}
-                external={thesisUrl.startsWith("http")}
-                variant="secondary"
-                className="mt-6"
-                aria-label={`Read thesis: ${thesis.title}`}
-              >
-                Read Thesis
-                <HiArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Button>
-            )}
-          </div>
-        </article>
-
-        <div className="border-t border-subtle p-7 sm:p-10 lg:border-t-0">
+      <div className="mt-12 border-y border-subtle lg:mt-16">
+        <div className="mx-auto max-w-5xl p-7 sm:p-10">
           {selectedPublications.length > 0 && (
             <div>
               <h3 className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">Selected publications</h3>

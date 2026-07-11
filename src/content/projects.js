@@ -13,9 +13,9 @@ export const projects = [
     category: "Search · Ranking · Recommendation",
     positioning: "Production-shaped ML system for intelligent product discovery",
     summary:
-      "An end-to-end e-commerce discovery platform combining semantic search, hybrid ranking, behavior-based recommendations, product comparison, and a catalog-grounded shopping assistant.",
+      "An end-to-end e-commerce discovery platform combining semantic search, hybrid ranking, behavior-based recommendations, product comparison, and a conversational shopping assistant that answers questions about catalog products.",
     engineeringSummary:
-      "EcoShop routes catalog data through semantic and keyword retrieval, hybrid ranking, personalized recommendations, and a REST API. Relevance is evaluated offline with Precision@K, Recall@K, MRR, and NDCG, while structured logging, health checks, and deterministic fallbacks keep the system observable and resilient when AI services fail.",
+      "EcoShop routes catalog data through semantic and keyword retrieval, hybrid ranking, personalized recommendations, and a REST API, while its catalog-grounded chatbot can discuss products, answer shopping questions, and support comparisons. Relevance is evaluated offline with Precision@K, Recall@K, MRR, and NDCG, while structured logging, health checks, and deterministic fallbacks keep the system observable and resilient when AI services fail.",
     image: "",
     imageAlt: "EcoShop product discovery application interface",
     imageWidth: 1200,

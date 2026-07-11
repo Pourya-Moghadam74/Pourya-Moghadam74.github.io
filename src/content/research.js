@@ -1,8 +1,8 @@
 export const researchSection = {
   eyebrow: "05 / Research dossier",
-  title: "Rigorous evaluation for real sensing problems.",
+  title: "Selected research publications.",
   description:
-    "Research at the intersection of machine learning, multimodal sensing, privacy-preserving AI, and intelligent healthcare systems.",
+    "Published work spanning applied machine learning, intelligent sensing, energy systems, and privacy-preserving AI.",
 };
 
 export const featuredResearch = {
