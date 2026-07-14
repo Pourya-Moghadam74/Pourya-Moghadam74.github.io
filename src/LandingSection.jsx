@@ -44,15 +44,6 @@ const LandingSection = () => {
             <Button as="a" href="#projects-section" className="w-full !border-accent !bg-accent !text-white hover:!bg-accent-hover hover:!text-ink sm:w-auto">
               Explore selected systems
             </Button>
-            <Button
-              as="a"
-              href={profile.resumeUrl}
-              external
-              variant="secondary"
-              className="w-full !border-white/35 !text-white hover:!border-[#67E3EA] hover:!text-[#67E3EA] sm:w-auto"
-            >
-              View résumé
-            </Button>
           </div>
 
           <p className="mt-10 max-w-xl border-l border-accent pl-4 text-sm leading-relaxed text-[#B8C3CF]">

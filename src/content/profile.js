@@ -17,7 +17,6 @@ export const profile = {
   ],
   location: "Toronto, Canada",
   email: "Pouriya.Moghadam@gmail.com",
-  resumeUrl: "/Pourya-Moghadam-Resume.pdf",
   contactIntroduction:
     "If you're building a useful ML product, working through a difficult modeling problem, or looking for an engineer who can own the path to production, I'd be glad to hear from you.",
 };

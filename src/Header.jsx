@@ -70,15 +70,6 @@ const Header = () => {
           </ul>
         </nav>
 
-        <a
-          href={profile.resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden min-h-9 items-center border border-primary/30 px-4 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-primary transition-colors hover:border-accent hover:text-accent lg:inline-flex"
-        >
-          Résumé ↗
-        </a>
-
         <button
           ref={menuButtonRef}
           type="button"
@@ -109,16 +100,6 @@ const Header = () => {
                     </a>
                   </li>
                 ))}
-                <li className="mt-2 border-t border-subtle pt-2">
-                  <a
-                    href={profile.resumeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-3 py-3 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-accent"
-                  >
-                    View résumé ↗
-                  </a>
-                </li>
               </ul>
             </nav>
           </PageContainer>
