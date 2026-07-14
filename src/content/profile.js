@@ -6,10 +6,10 @@ export const profile = {
   imageAlt: "Portrait of Pourya Moghadam",
   eyebrow: "Machine Learning Engineer",
   greeting: "Pourya Moghadam",
-  headline: "I like building things that learn.",
-  descriptor: "PhD · Applied AI · University of Toronto",
+  headline: "I build machine learning systems that hold up in production.",
+  descriptor: "3 years shipping production ML · PhD · University of Toronto",
   biography:
-    "I'm a Machine Learning Engineer with a PhD from the University of Toronto. I enjoy building intelligent software, from search and recommendation systems to multimodal AI and LLM applications. My work combines machine learning, backend engineering, and thoughtful evaluation to turn research ideas into reliable products.",
+    "I'm a Machine Learning Engineer with three years of experience taking models from an early idea to software people can rely on. I work across data pipelines, model development, APIs, evaluation, deployment, and monitoring, with a particular interest in LLM applications and multimodal learning. My PhD at the University of Toronto taught me to ask hard questions of a model; production taught me to care just as much about the system around it.",
   credibility: [
     "University of Toronto",
     "Machine Learning & Applied AI",
@@ -19,5 +19,5 @@ export const profile = {
   email: "Pouriya.Moghadam@gmail.com",
   resumeUrl: "/Pourya-Moghadam-Resume.pdf",
   contactIntroduction:
-    "Whether it's collaborating on research, building human-centered AI, or exploring consulting engagements—drop a note and I'll reply soon.",
+    "If you're building a useful ML product, working through a difficult modeling problem, or looking for an engineer who can own the path to production, I'd be glad to hear from you.",
 };

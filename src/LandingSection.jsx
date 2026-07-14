@@ -11,7 +11,7 @@ const LandingSection = () => {
   const github = socialLinks.find((link) => link.id === "github");
   const googleScholar = socialLinks.find((link) => link.id === "google-scholar");
   const email = socialLinks.find((link) => link.id === "email");
-  const focusAreas = ["Machine Learning", "Applied AI systems", "LLM-powered products"];
+  const focusAreas = ["Production ML systems", "Applied AI", "LLM-powered products"];
 
   return (
     <Section

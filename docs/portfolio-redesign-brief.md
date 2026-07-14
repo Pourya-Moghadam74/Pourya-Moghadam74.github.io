@@ -85,15 +85,14 @@ Credibility indicators:
 - Machine Learning and Applied AI
 - Toronto, Canada
 
-Future optional links are GitHub, Google Scholar, résumé, and email. Render them only when backed by configured URLs. Do not add years of experience, availability claims, numerical impact, new location details, or unverified links.
+Future optional links are GitHub, Google Scholar, résumé, and email. Render them only when backed by configured URLs. The confirmed positioning is three years of production ML experience; do not add availability claims, numerical impact, new location details, or unverified links.
 
 ## Featured projects
 
 The required order is:
 
-1. EcoShop
-2. RAG and Agentic AI Application
-3. Privacy-Preserving Multimodal Activity Recognition System
+1. ProjectPilot AI
+2. Privacy-Preserving Multimodal Activity Recognition System
 
 Projects should read as engineering case studies rather than generic cards. Each project data model should be able to represent:
 
@@ -111,52 +110,7 @@ Projects should read as engineering case studies rather than generic cards. Each
 
 All URLs are optional. Missing values should be omitted from the rendered interface rather than represented by empty links. The homepage should expose the most useful scanning information; detailed architecture and evaluation belong in an expandable or future case-study treatment.
 
-### EcoShop
-
-**Title:** EcoShop
-
-**Positioning:** Production-shaped ML system for intelligent product discovery
-
-**Summary:** “An end-to-end e-commerce discovery platform combining semantic search, hybrid ranking, behavior-based recommendations, product comparison, and a catalog-grounded shopping assistant.”
-
-Homepage highlights:
-
-- Hybrid semantic and keyword ranking
-- Behavior-based personalized recommendations
-- Offline evaluation with MRR and NDCG
-- Dockerized deployment with observability and graceful AI fallbacks
-
-Technology summary:
-
-`Python · Django REST Framework · React · PostgreSQL · Gemini · Docker · Nginx`
-
-The detailed case study should cover the following verified themes without placing all of them on the homepage:
-
-- Semantic product search using embeddings
-- Hybrid ranking combining semantic and deterministic signals
-- Exact-match, rating, review-volume, and popularity signals
-- Behavior-based personalized recommendations
-- Weighted interest profiles, category affinity, and recommendation fallback modes
-- Catalog-grounded conversational AI and comparison-aware chatbot behavior
-- Deterministic fallbacks when the AI provider is unavailable
-- Offline search evaluation using Precision@K, Recall@K, MRR, and NDCG
-- Separate online behavioral evaluation using click-through rate, zero-result rate, clicked rank, search-to-cart rate, and recommendation CTR
-- Structured JSON logging, request IDs, and liveness/readiness health checks
-- Docker Compose, PostgreSQL, Django REST Framework, React, Gunicorn, Nginx, and VM deployment
-
-Technical framing constraints:
-
-- Describe the recommender as a hybrid content-based system using pretrained representations and explainable behavioral weights.
-- Do not describe it as collaborative filtering or a custom-trained neural recommender.
-- Explain that artificial portfolio traffic is insufficient to train and validate those approaches credibly.
-- Present AI as an enhancement, not a mandatory availability dependency.
-- Explain that semantic and generative failures degrade to deterministic catalog behavior.
-- Keep offline relevance evaluation distinct from online behavioral evaluation.
-- State that payments are simulated, not a real payment system.
-- Describe the application as production-shaped, not as a live commercial store.
-- Do not invent measured results, metrics, or implementation details beyond verified candidate information.
-
-### RAG and Agentic AI Application
+### ProjectPilot AI
 
 This is a placeholder project specification. Do not publish assumed details. The following fields require candidate input:
 
@@ -329,7 +283,7 @@ Each phase should remain independently reviewable and preserve a working build.
 3. **Design foundations:** Establish accessible palette, typography, spacing, surface, border, focus, and motion tokens. Review contrast before component work.
 4. **Page skeleton:** Reorder semantic sections and add stable fragment anchors while retaining simple existing presentation.
 5. **Header and hero:** Implement the role-first message, credibility indicators, calls to action, and accessible responsive navigation.
-6. **Featured projects:** Build recruiter-scannable case-study components and populate only verified EcoShop information; keep incomplete projects explicitly data-gated.
+6. **Featured projects:** Build recruiter-scannable case-study components and keep incomplete project details explicitly data-gated.
 7. **Capabilities:** Add evidence-based grouped capabilities linked conceptually to projects and experience.
 8. **Experience and research:** Rebalance industry, research, education, publications, and compact teaching content.
 9. **Contact and footer:** Replace the form with an optional-link-aware call to action and simplify supporting navigation.

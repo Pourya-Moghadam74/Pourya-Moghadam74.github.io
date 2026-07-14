@@ -1,68 +1,21 @@
 export const projectsSection = {
   eyebrow: "02 / Selected systems",
-  title: "Evidence, not a tool inventory.",
+  title: "A few things I've built.",
   description:
-    "Three systems spanning product discovery, agentic AI, and privacy-preserving sensing—framed by the problem, engineering decisions, and evaluation approach.",
+    "Two projects that show how I approach applied AI: define the problem clearly, build the full system, and evaluate what matters.",
 };
 
 export const projects = [
   {
-    id: "ecoshop",
-    title: "EcoShop",
-    status: "Production-shaped system",
-    category: "Search · Ranking · Recommendation",
-    positioning: "Production-shaped ML system for intelligent product discovery",
-    summary:
-      "An end-to-end e-commerce discovery platform combining semantic search, hybrid ranking, behavior-based recommendations, product comparison, and a conversational shopping assistant that answers questions about catalog products.",
-    engineeringSummary:
-      "EcoShop routes catalog data through semantic and keyword retrieval, hybrid ranking, personalized recommendations, and a REST API, while its catalog-grounded chatbot can discuss products, answer shopping questions, and support comparisons. Relevance is evaluated offline with Precision@K, Recall@K, MRR, and NDCG, while structured logging, health checks, and deterministic fallbacks keep the system observable and resilient when AI services fail.",
-    image: "",
-    imageAlt: "EcoShop product discovery application interface",
-    imageWidth: 1200,
-    imageHeight: 800,
-    highlights: [
-      "Hybrid semantic and keyword ranking",
-      "Behavior-based personalized recommendations",
-      "Offline evaluation with Precision@K, Recall@K, MRR, and NDCG",
-      "Dockerized deployment with observability and graceful AI fallbacks",
-    ],
-    architecture: ["Product catalog", "Embeddings + keywords", "Hybrid ranker", "Recommendations", "REST API", "Evaluation"],
-    evidence: [
-      { label: "Relevance", value: "Precision@K · Recall@K · MRR · NDCG" },
-      { label: "Operations", value: "Structured logs · request IDs · health checks" },
-      { label: "Resilience", value: "Deterministic fallbacks for AI-provider failures" },
-    ],
-    technologyGroups: [
-      {
-        label: "Machine Learning",
-        items: ["Python", "Gemini"],
-      },
-      {
-        label: "Application",
-        items: ["Django REST Framework", "React", "PostgreSQL"],
-      },
-      {
-        label: "Deployment",
-        items: ["Docker", "Nginx"],
-      },
-    ],
-    repositoryUrl: "",
-    liveUrl: "https://ecoshop.dev",
-    caseStudyUrl: "",
-    publicationUrl: "",
-    featured: true,
-    details: {},
-  },
-  {
-    id: "cortex",
-    title: "CORTEX",
+    id: "projectpilot-ai",
+    title: "ProjectPilot AI",
     status: "In development",
     category: "Agentic AI · Multimodal workflows",
     positioning: "A model-flexible workspace for agentic document and image workflows",
     summary:
       "An agentic AI application designed to work across multiple models, process documents and images, call functions and tools, connect through MCP, and maintain memory across workflows.",
     engineeringSummary:
-      "CORTEX is being designed around a model router and agent runtime that can coordinate multimodal inputs, tools, MCP services, and persistent memory. Its detailed retrieval, evaluation, and deployment architecture will be documented as the system matures.",
+      "ProjectPilot AI is built around a model router and agent runtime that coordinate multimodal inputs, tools, MCP services, and persistent memory. I'm developing it in small, testable pieces so model behavior, retrieval quality, and failures can be measured as the system grows.",
     image: "",
     imageAlt: "",
     imageWidth: null,

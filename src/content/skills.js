@@ -1,8 +1,8 @@
 export const capabilitiesSection = {
   eyebrow: "03 / Capability matrix",
-  title: "From model behavior to operating systems.",
+  title: "What I work with day to day.",
   description:
-    "Capabilities demonstrated across production ML systems, applied AI projects, and multimodal research.",
+    "The practical mix of modeling, software engineering, and operations I use to take ML work into production.",
 };
 
 export const capabilityGroups = [
@@ -24,22 +24,20 @@ export const capabilityGroups = [
     ],
   },
   {
-    id: "search-ranking-recommendation",
-    title: "Search, Ranking, and Recommendation",
+    id: "data-ml-pipelines",
+    title: "Data and ML Pipelines",
     description:
-      "Building measurable product-discovery systems that combine semantic representations, deterministic signals, and user behavior.",
+      "Turning raw data into reproducible training and inference workflows with clear validation and versioning.",
     items: [
-      "Semantic Search",
-      "Embeddings",
-      "Hybrid Ranking",
-      "Content-Based Recommendation",
-      "Behavioral Personalization",
-      "Similarity Search",
-      "Relevance Judgments",
-      "Precision@K",
-      "Recall@K",
-      "MRR",
-      "NDCG",
+      "Python",
+      "SQL",
+      "NumPy",
+      "pandas",
+      "ETL Pipelines",
+      "Feature Engineering",
+      "Data Validation",
+      "Experiment Tracking",
+      "Model Versioning",
     ],
   },
   {
@@ -76,6 +74,8 @@ export const capabilityGroups = [
       "Authentication",
       "Background Processing",
       "Testing",
+      "Git",
+      "CI/CD",
     ],
   },
   {
@@ -93,6 +93,8 @@ export const capabilityGroups = [
       "Health and Readiness Checks",
       "Structured Logging",
       "Request Tracing",
+      "Model Monitoring",
+      "Performance Monitoring",
       "Graceful AI Fallbacks",
     ],
   },
